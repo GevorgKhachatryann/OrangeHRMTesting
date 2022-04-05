@@ -4,10 +4,13 @@ import PageObjects.AdminPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-
+import javafaker.tests.userAdd;
 
 
 public class adminSteps {
+    private final userAdd userAdd = new userAdd();
+    private  String usernameN = userAdd.Email();
+
     @And("^I click on Admin button$")
     public void ClickOnAdminButton() {
         AdminPage.ClickAdminBtn();
@@ -29,8 +32,8 @@ public class adminSteps {
         AdminPage.EmployeeName(employeeName);
     }
 
-    @And("^I type  \"([^\"]*)\" as new username$")
-    public void TypeAsNewUsername(String usernameN) {
+    @And("I type new username$")
+    public void TypeAsNewUsername() {
         AdminPage.TypeNewUsername(usernameN);
     }
 
@@ -131,10 +134,9 @@ public class adminSteps {
     public void assertThatNoRecordsFound() {
         AdminPage.textIsDisplayed();
     }
-
-    @Then("^assert that username is \"([^\"]*)\"$")
-    public void assertThatUsernameIsDisplayed(String username) {
-        AdminPage.checkUsername(username);
+    @Then("^assert that username is displayed$")
+    public void assertThatUsernameIsDisplayed() {
+        AdminPage.checkUsername(usernameN);
     }
 
     @And("^assert that user role is displayed$")

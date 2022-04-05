@@ -83,6 +83,9 @@ public class AdminPage extends Hooks {
     }
 
 
+
+
+
     public static void TypeNewUsername(String usernameN) {
         driver.findElement(newUsername).sendKeys(usernameN);
     }

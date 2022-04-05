@@ -20,13 +20,13 @@ Feature:Check Admin page functionality (add,delete,search)
    And   I select User Role
    And   I type "Charlie Carter" as employee name
    And   I  select employee name
-   And   I type  "AaaaaaaaaNS" as new username
+   And   I type new username
    And   I select status
    And   I type "orange1234" as new password
    And   I type "orange1234" as confirm password
    And   I click Save button
    Then  Admin page is opened and URL should contain "orangehrmlive"
-   And   assert that username is "AaaaaaaaaNS"
+   And   assert that username is displayed
    And   assert that user role is displayed
 
   Scenario: check search user functionality
